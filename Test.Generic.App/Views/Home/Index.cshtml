@@ -1,0 +1,32 @@
+﻿@model Test.Generic.App.Models.ViewDataModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">UserId</th>
+                <th scope="col">Title</th>
+                <th scope="col">Body</th>
+                <th scope="col">Detail</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ListData)
+            {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.UserId</td>
+                <td>@item.Title</td>
+                <td>@item.Body</td>
+                <td><a href="/Home/Detail/@item.Id">Detail</a> </td>
+                <td><a href="/Home/Delete/@item.Id">Delete</a> </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
